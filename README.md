@@ -20,8 +20,8 @@ TOTAL INSTALLATION TIME: 30 mins (without RPi SD image download and flashing tim
 2. Start Raspbian OS > **Menu** > **Preferences** > **Raspberry Pi Configuration** > **Interfaces** (TAB) > **SSH** > **Enabled** > OK
 3. Connect your USB external HDD 
 4. Connect a wired/Ethenet cable or setup a wifi for internet connection
-5. Use Raspbian OS terminal or ssh to RPi `ssh pi@<RPi_IP_Address>`
-6. Type the following in the terminal or SSH console.
+5. Open Raspbian OS terminal or ssh to RPi `ssh pi@<RPi_IP_Address>`
+6. Type the following commands in the terminal or SSH console.
 
 	```
 	sudo apt-get update
