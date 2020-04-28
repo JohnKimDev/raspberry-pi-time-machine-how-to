@@ -23,24 +23,24 @@ TOTAL INSTALLATION TIME: 30 mins (without RPi SD image download and flashing tim
 5. Open Raspbian OS terminal or ssh to RPi `ssh pi@<RPi_IP_Address>`
 6. Type the following commands in the terminal or SSH console.
 
-	```
+	```console
 	sudo apt-get update
 	```
-	```
+	```console
 	sudo apt-get upgrade
 	```
-	```
+	```console
 	sudo apt-get install gparted hfsprogs hfsutils hfsplus samba samba-common-bin
 	```
 
 7. `lsblk` and the find the mountpoint of the external HDD, for example;
 
 	```
-		NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-		sda           8:0    0  3.7T  0 disk /dev/sda
-		mmcblk0     179:0    0  7.2G  0 disk
-		├─mmcblk0p1 179:1    0  256M  0 part /boot
-		└─mmcblk0p2 179:2    0    7G  0 part /
+	NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+	sda           8:0    0  3.7T  0 disk /dev/sda
+	mmcblk0     179:0    0  7.2G  0 disk
+	├─mmcblk0p1 179:1    0  256M  0 part /boot
+	└─mmcblk0p2 179:2    0    7G  0 part /
 	```	
 	*MOUNTPOINT* for the external HDD (in this example) is **/dev/sda**. <-- NOTE THIS INFORMATION
 	
@@ -48,16 +48,16 @@ TOTAL INSTALLATION TIME: 30 mins (without RPi SD image download and flashing tim
 	
 	(Replace **/dev/sda** witht the *mounting location* information from STEP 7)
 	
-	```
+	```console
 	sudo umount /dev/sda2
 	```
-	```
+	```console
 	sudo parted /dev/sda storage hfsplus
 	```
 	
 9. `sudo blkid /dev/sda` and get the UUID of the newly formated external HDD. For example; 
 	```
-		/dev/sda: UUID="71eb5d27-232d-9438-a9f7-bcf23423e2fa6a" LABEL="untitled" TYPE="hfsplus"
+	/dev/sda: UUID="71eb5d27-232d-9438-a9f7-bcf23423e2fa6a" LABEL="untitled" TYPE="hfsplus"
 	```
 
 	UUID: **71eb5d27-232d-9438-a9f7-bcf23423e2fa6a**  <-- NOTE THIS INFORMATION
@@ -66,29 +66,29 @@ TOTAL INSTALLATION TIME: 30 mins (without RPi SD image download and flashing tim
 
 	(replace **71eb5d27-232d-9438-a9f7-bcf23423e2fa6a** witht the *UUID* information from STEP 9)
 	
-	```
+	```console
 	mkdir /home/pi/shared
 	```
 
-	```
+	```console
 	echo "UUID=71eb5d27-232d-9438-a9f7-bcf23423e2fa6a /home/pi/shared hfsplus force,rw 0 2" | sudo tee -a /etc/fstab
 	```
 
-	```
+	```console
 	sudo mount -a
 	```
 
-	```
+	```console
 	sudo chown pi:pi /home/pi/shared
 	```
 
-	```
+	```console
 	sudo chmod 777 /home/pi/shared
 	```
 	
 11.	Samba Configuration: Continue type the command in the terminal 
 
-	```
+	```console
 	sudo tee -a /etc/samba/smb.conf > /dev/null <<EOT
 	[TimeMachine]
 	comment = Time Machine
@@ -105,15 +105,17 @@ TOTAL INSTALLATION TIME: 30 mins (without RPi SD image download and flashing tim
 	EOT
 	```
 
-	```
+	```console
 	sudo smbpasswd -a pi
 	```
-	```
+	
+	```console
 	sudo hostnamectl set-hostname TimeMachine
 	```
+	
 12. All done	
 
-	```
+	```console
 	sudo reboot
 	```
 
