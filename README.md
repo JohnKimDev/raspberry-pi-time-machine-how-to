@@ -1,22 +1,22 @@
 # How to build a Time Machine backup with a Raspberry Pi that just works. 
 
-![](images/raspberrypi_icon.png | width=100)    ![](images/timemachine_icon.png | width=100)
-
+![](images/logo.png)
 
 
 UPDATED: April, 2020
 
 TOTAL INSTALLATION TIME: 30 mins (without RPi SD image download and flashing time)
 
-## Hardware
-* Raspberry Pi 3, 3b, sb+, or 4 
+# Hardware
+* Raspberry Pi 3, 3b, 3b+, or 4 
 * 8GB or more SD card 
 * External USB Storage Drive (HDD, SDD, USB Drive, etc)
 * Wired/Ethernet (recommended) or wifi internet connection
 
-## Installation Steps
+
+# Installation Steps
 1. Download "Raspbian Buster with Desktop" [https://downloads.raspberrypi.org/raspbian_latest](https://downloads.raspberrypi.org/raspbian_latest) and flash a SD card
-	* Windows/Mac/Linux SD Image Writer: [https://www.balena.io/etcher/](https://www.balena.io/etcher/) 	 
+	* Windows/Mac/Linux SD Image Writer: [https://www.balena.io/etcher](https://www.balena.io/etcher) 	 
 2. Start Raspbian OS > **Menu** > **Preferences** > **Raspberry Pi Configuration** > **Interfaces** (TAB) > **SSH** > **Enabled** > OK
 3. Connect USB external HDD 
 4. Connect an Ethenet cable or setup a wifi to connect to internet 
@@ -54,21 +54,17 @@ TOTAL INSTALLATION TIME: 30 mins (without RPi SD image download and flashing tim
 	```
 	sudo parted /dev/sda storage hfsplus
 	```
-
-
+	
 9. `sudo blkid /dev/sda` and get the UUID of the newly formated external HDD. For example; 
-
 	```
 		/dev/sda: UUID="71eb5d27-232d-9438-a9f7-bcf23423e2fa6a" LABEL="untitled" TYPE="hfsplus"
 	```
-	
+
 	UUID: **71eb5d27-232d-9438-a9f7-bcf23423e2fa6a**  <-- NOTE THIS INFORMATION
 	
+10.	Mounting and Configuration: Continue type the command in the terminal 
 
-10.	 Mounting and Configuration: Continue type the command in the terminal 
-
-    (replace **71eb5d27-232d-9438-a9f7-bcf23423e2fa6a** witht the *UUID* information from STEP 9)
-
+	(replace **71eb5d27-232d-9438-a9f7-bcf23423e2fa6a** witht the *UUID* information from STEP 9)
 	
 	```
 	mkdir /home/pi/shared
@@ -90,7 +86,7 @@ TOTAL INSTALLATION TIME: 30 mins (without RPi SD image download and flashing tim
 	sudo chmod 777 /home/pi/shared
 	```
 	
-11.	 Samba Configuration: Continue type the command in the terminal 
+11.	Samba Configuration: Continue type the command in the terminal 
 
 	```
 	sudo tee -a /etc/samba/smb.conf > /dev/null <<EOT
@@ -121,7 +117,9 @@ TOTAL INSTALLATION TIME: 30 mins (without RPi SD image download and flashing tim
 	sudo reboot
 	```
 	
-## Test
+
+
+# Test
 Form your mac, Settings > Time Machine
 
 ![](images/timemachine_1.png)
@@ -131,7 +129,7 @@ Form your mac, Settings > Time Machine
 ![](images/timemachine_3.png)
 	
 	
-## Comments & Note Details
+# Comments
 
 ### Step 1: Raspbian OS Image
 * You don't really need a desktop version image of Raspbian OS. All installation steps above are for command line inputs. You can check out the download page for other image options. [https://www.raspberrypi.org/downloads/raspbian/](https://www.raspberrypi.org/downloads/raspbian/)
