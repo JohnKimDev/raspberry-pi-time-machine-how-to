@@ -1,5 +1,7 @@
 # How to build a Time Machine backup with a Raspberry Pi that just works. 
 
+[https://johnkimdev.github.io/raspberry-pi-time-machine-how-to](https://johnkimdev.github.io/raspberry-pi-time-machine-how-to)
+
 ![](images/logo.png)
 
 UPDATED: April, 2020
@@ -126,7 +128,7 @@ From your mac, **Settings** > **Time Machine**
 	
 # Comments
 
-### Step 1: Raspbian OS Image
+**Step 1: Raspbian OS Image**
 * You don't really need a desktop version image of Raspbian OS. All installation steps above are for command line inputs. You can check out the download page for other image options. [https://www.raspberrypi.org/downloads/raspbian/](https://www.raspberrypi.org/downloads/raspbian/)
 
 * If you don't use a desktop version image, you can use a smaller size of SD card.
@@ -135,22 +137,22 @@ From your mac, **Settings** > **Time Machine**
 
 * (TIP) When downloading an image from https://www.raspberrypi.org/downloads page, using a torrent option is much faster than the direct download. 
 
-### Step 2: SSH
+**Step 2: SSH**
 * If you choose to use the minimal image (without desktop version), make sur to enable SSH during the setup.
 
-### Step 4: Wifi vs. Ethernet
+**Step 4: Wifi vs. Ethernet**
 * You can use wifi, but an ethernet connection is better for speed and reliability. 
 
-### Step 5: IP Address
+**Step 5: IP Address**
 * one of the ways to find IP address is open a terminal and type `ifconfig` 
 
-### Step 6: GParted
+**Step 6: GParted**
 * If you want to divide your hard drive or use a potion of the main SD card, it might be easier to use a GUI version, (if you are using a desktop version OS), go to **Menu** > **System Tools** > **GParted** 
 
-### Step 10: Mounting Location
+**Step 10: Mounting Location**
 * For `mkdir /home/pi/shared` command and other mounting location information */home/pi/shared*, you can choose any location but it is important that you need to set the owner and permission.  
 
-### Step 11: Samba Configurations
+**Step 11: Samba Configurations**
 * The long command `sudo tee -a /etc/samba/smb.conf ...` is SINGLE command, copy entire block of codes and paste and execute.
 
 * In the command of `sudo tee -a /etc/samba/smb.conf ...`, the text "**[Time Machine]**" (without brackets) will show up as a time machine name in a Mac Time Machine dialog. You can name it whatever you want.
@@ -159,8 +161,7 @@ From your mac, **Settings** > **Time Machine**
 
 * `sudo hostnamectl set-hostname TimeMachine` This is an optional command. The RPi hostname shows up in the sidebar of a mac under "Locations". The hostname can be anything but no white space or punctuation characters allow. [https://en.wikipedia.org/wiki/Hostname](https://en.wikipedia.org/wiki/Hostname)
 
-### Initial Backup
-
+**Post Installation: Initial Backup**
 * _It is normal to take a long time_ during the first backup process. It can takes hours (mine took over 9 hours). It is a good idea to run the first backup overnight with a wired (ethernet) connection. BTW it is OK to interrupt a backup process; it will resume during the next scheduled time. The backup process will be shorter after completing the initial backup. 
 
 # My Final Setup
