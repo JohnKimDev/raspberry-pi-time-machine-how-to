@@ -2,7 +2,6 @@
 
 ![](images/logo.png)
 
-
 UPDATED: April, 2020
 
 TOTAL INSTALLATION TIME: 30 mins (without RPi SD image download and flashing time)
@@ -13,13 +12,12 @@ TOTAL INSTALLATION TIME: 30 mins (without RPi SD image download and flashing tim
 * External USB Storage Drive (HDD, SDD, USB Drive, etc)
 * Wired/Ethernet (recommended) or wifi internet connection
 
-
 # Installation Steps
 1. Download "Raspbian Buster with Desktop" [https://downloads.raspberrypi.org/raspbian_latest](https://downloads.raspberrypi.org/raspbian_latest) and flash a SD card
 	* Windows/Mac/Linux SD Image Writer: [https://www.balena.io/etcher](https://www.balena.io/etcher) 	 
 2. Start Raspbian OS > **Menu** > **Preferences** > **Raspberry Pi Configuration** > **Interfaces** (TAB) > **SSH** > **Enabled** > OK
-3. Connect USB external HDD 
-4. Connect an Ethenet cable or setup a wifi to connect to internet 
+3. Connect your USB external HDD 
+4. Connect a wired/Ethenet cable or setup a wifi for internet connection
 5. Use Raspbian OS terminal or ssh to RPi `ssh pi@<RPi_IP_Address>`
 6. Type the following in the terminal or SSH console.
 
@@ -116,18 +114,15 @@ TOTAL INSTALLATION TIME: 30 mins (without RPi SD image download and flashing tim
 	```
 	sudo reboot
 	```
-	
-
 
 # Test
-Form your mac, Settings > Time Machine
+From your mac, **Settings** > **Time Machine**
 
 ![](images/timemachine_1.png)
 
 ![](images/timemachine_2.png)
 
 ![](images/timemachine_3.png)
-	
 	
 # Comments
 
