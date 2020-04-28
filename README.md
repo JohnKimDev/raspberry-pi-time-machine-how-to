@@ -162,3 +162,13 @@ From your mac, **Settings** > **Time Machine**
 ### Initial Backup
 
 * _It is normal to take a long time_ during the first backup process. It can takes hours (mine took over 9 hours). It is a good idea to run the first backup overnight with a wired (ethernet) connection. BTW it is OK to interrupt a backup process; it will resume during the next scheduled time. The backup process will be shorter after completing the initial backup. 
+
+# My Final Setup
+
+* Raspberry Pi 3
+* Raspbian Buster with desktop image
+* SandDisk 8GB SD
+* Toshiba NAS N300 4TB HDD
+* Rosewill USB 3.0 eSATA 3.5” Aluminum SATA Enclosure
+
+![](images/mysetup.jpg)
