@@ -9,7 +9,7 @@ UPDATED: April, 2020
 TOTAL INSTALLATION TIME: 30 mins (without RPi SD image download and flashing time)
 
 # Known Issue
-If your Mac has an older MacOS, it may not able to find the Time Machine (Samba) drive automatically. I have two Macs, one with 10.15, catalina and another one with 10.11 El Capitan. Everything works perfectly on 10.15 but in 10.11, it was not able to connect to the RPi Time Machine drive. It seems there might be some suggested workaround solution on Web but I will leave you to find out if you run into this issue. (FYI, I couldn't make mine work on 10.11 either) 
+If your Mac has an older MacOS, it may not able to find the Time Machine (Samba) drive automatically. I have two Macs, one with 10.15, catalina and another one with 10.11 El Capitan. Everything works perfectly on 10.15 but in 10.11, it was not able to connect to the RPi Time Machine drive. There are some suggested workaround solutions on Web but I will leave you to find out if you run into this issue. (FYI, I couldn't make mine work on 10.11 either) 
 
 # Hardware
 * Raspberry Pi 3, 3b, 3b+, or 4 
