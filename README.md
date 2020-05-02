@@ -52,7 +52,7 @@ If your Mac has an older MacOS, it may not able to find the Time Machine (Samba)
 	(Replace **/dev/sda** witht the *mounting location* information from STEP 7)
 	
 	```console
-	sudo umount /dev/sda2
+	sudo umount /dev/sda
 	```
 	```console
 	sudo parted /dev/sda storage hfsplus
