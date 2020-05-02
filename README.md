@@ -4,7 +4,7 @@
 
 ![](images/logo.png)
 
-UPDATED: April, 2020
+UPDATED: May, 2020
 
 TOTAL INSTALLATION TIME: 30 mins (without RPi SD image download and flashing time)
 
